@@ -1,10 +1,33 @@
-import React, { useRef } from "react";
+import React, { useState, useRef } from "react";
 import { Card, Form, Button } from "react-bootstrap";
+import { useAuth } from "../contexts/AuthContext";
 
 const Signup = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
+  //get signup function from created AuthContext
+  const { signup } = useAuth();
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (passwordRef.current.value !== passwordConfirmRef.current.value) {
+      return setError("Passwords do not match.");
+    }
+
+    try {
+      setError("");
+      setLoading(true);
+      // signup function
+      await signup(emailRef.current.value, passwordRef.current.value);
+    } catch (e) {
+      setError("Failed to create an account...");
+    }
+    setLoading(false);
+  };
 
   return (
     <>
