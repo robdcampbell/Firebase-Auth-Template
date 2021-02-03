@@ -23,6 +23,11 @@ export const AuthProvider = ({ children }) => {
     // firebase method -
     auth.signInWithEmailAndPassword(email, password);
   };
+
+  const logout = (email, password) => {
+    // firebase method -
+    return auth.signOut();
+  };
   // *** END OF MODULAR SERVER SECTION *** //
 
   // when signup is called, fires createUserWithEmailAndPassword, fires auth.onAuthStateChanged, then sets the current user state to the user who just logged in.
@@ -40,6 +45,7 @@ export const AuthProvider = ({ children }) => {
     currentUser,
     signup,
     login,
+    logout,
   };
 
   return (
