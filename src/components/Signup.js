@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { Card, Form, Button } from "react-bootstrap";
+import { Card, Form, Button, Alert } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
 
 const Signup = () => {
@@ -7,9 +7,9 @@ const Signup = () => {
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
   //get signup function from created AuthContext
-  const { signup } = useAuth();
+  const { signup, currentUser } = useAuth();
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -34,15 +34,18 @@ const Signup = () => {
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Sign Up</h2>
+          {/* firebase sets localStorage tokens to verify 
+          {currentUser.email} */}
+          {error && <Alert variant="danger">{error}</Alert>}
 
-          <Form>
+          <Form onSubmit={handleSubmit}>
             <Form.Group id="email">
               <Form.Label>Email</Form.Label>
               <Form.Control type="email" required ref={emailRef} />
             </Form.Group>
 
             <Form.Group id="password">
-              <Form.Label>Passwrod</Form.Label>
+              <Form.Label>Password</Form.Label>
               <Form.Control type="password" required ref={passwordRef} />
             </Form.Group>
 
@@ -51,7 +54,7 @@ const Signup = () => {
               <Form.Control type="password" required ref={passwordConfirmRef} />
             </Form.Group>
 
-            <Button type="submit" className="w-100">
+            <Button disabled={loading} type="submit" className="w-100">
               Sign Up
             </Button>
           </Form>
