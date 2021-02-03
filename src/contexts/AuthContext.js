@@ -13,10 +13,17 @@ export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
 
+  //  *** MODULAR *** can wire up to other servers here  //
   const signup = (email, password) => {
     // returns a promise, to sign in if successful or throw an error if not
     return auth.createUserWithEmailAndPassword(email, password);
   };
+
+  const login = (email, password) => {
+    // firebase method -
+    auth.signInWithEmailAndPassword(email, password);
+  };
+  // *** END OF MODULAR SERVER SECTION *** //
 
   // when signup is called, fires createUserWithEmailAndPassword, fires auth.onAuthStateChanged, then sets the current user state to the user who just logged in.
   useEffect(() => {
@@ -32,6 +39,7 @@ export const AuthProvider = ({ children }) => {
   const value = {
     currentUser,
     signup,
+    login,
   };
 
   return (

@@ -7,7 +7,7 @@ const Login = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   //get signup function from created AuthContext
-  const { signup, currentUser } = useAuth();
+  const { login, currentUser } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -18,9 +18,9 @@ const Login = () => {
       setError("");
       setLoading(true);
       // signup function
-      await signup(emailRef.current.value, passwordRef.current.value);
+      await login(emailRef.current.value, passwordRef.current.value);
     } catch (e) {
-      setError("Failed to create an account...");
+      setError("Failed to sign in");
     }
     setLoading(false);
   };
