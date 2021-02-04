@@ -34,6 +34,14 @@ export const AuthProvider = ({ children }) => {
     return auth.sendPasswordResetEmail(email);
   };
 
+  const updateEmail = (email) => {
+    // firebase method -
+    return currentUser.updateEmail(email);
+  };
+  const updatePassword = (password) => {
+    // firebase method -
+    return currentUser.updatePassword(password);
+  };
   // *** END OF MODULAR SERVER SECTION *** //
 
   // when signup is called, fires createUserWithEmailAndPassword, fires auth.onAuthStateChanged, then sets the current user state to the user who just logged in.
@@ -53,6 +61,8 @@ export const AuthProvider = ({ children }) => {
     login,
     logout,
     resetPassword,
+    updateEmail,
+    updatePassword,
   };
 
   return (

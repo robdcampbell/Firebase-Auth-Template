@@ -36,7 +36,7 @@ const ForgotPassword = () => {
           {/* firebase sets localStorage tokens to verify 
           {currentUser.email} */}
           {error && <Alert variant="danger">{error}</Alert>}
-
+          {message && <Alert variant="success">{message}</Alert>}
           <Form onSubmit={handleSubmit}>
             <Form.Group id="email">
               <Form.Label>Email</Form.Label>
