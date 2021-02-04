@@ -4,6 +4,8 @@ This is a boilerplate to be used on future projects as a sign up / login module 
 
 Using React's context API, a user-content works with Firebase Authentication to log in a user and provide context throughout the entire app.
 
+See it live here : [Firebase Authentication Boilerplate](https://rc-auth-development.web.app/)
+
 ## Technologies used:
 
 - React.js
@@ -22,15 +24,13 @@ In project root directory, run:
 1. npm run build
 2. firebase init
 
-
-    - select "hosting"
-    - Public directory: build
-    - Single Page: Yes
-    - Github: No
-    - Overwrite: No
+   - select "hosting"
+   - Public directory: build
+   - Single Page: Yes
+   - Github: No
+   - Overwrite: No
 
 3. Run: npm run deploy
 
-
-    - This script is in package.json, and will deploy all firebase related aspects of the project.
-    - You can also run: npm run deploy:hosting , to only deploy hosting configuration.
+   - This script is in package.json, and will deploy all firebase related aspects of the project.
+   - You can also run: npm run deploy:hosting , to only deploy hosting configuration.
