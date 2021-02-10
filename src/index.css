@@ -1,7 +1,9 @@
 body {
-  background: radial-gradient(ellipse at top, #f8f8f8, transparent),
-    radial-gradient(ellipse at bottom, #ff9789, transparent);
+  /* background: radial-gradient(ellipse at top, #f8f8f8, transparent),
+    radial-gradient(ellipse at bottom, #ff9789, transparent); */
   /* background: linear-gradient(#e66465, #9198e5); */
+  background: radial-gradient(ellipse at top, #f8f8f8, transparent),
+    radial-gradient(ellipse at bottom, #a9d1d6, transparent);
 }
 
 .modal__card {
