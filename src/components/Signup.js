@@ -34,7 +34,7 @@ const Signup = () => {
 
   return (
     <>
-      <Card>
+      <Card className="modal__card">
         <Card.Body>
           <h2 className="text-center mb-4">Sign Up</h2>
           {/* firebase sets localStorage tokens to verify 

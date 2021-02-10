@@ -46,7 +46,7 @@ const UpdateProfile = () => {
 
   return (
     <>
-      <Card>
+      <Card className="modal__card">
         <Card.Body>
           <h2 className="text-center mb-4">Update Profile</h2>
           {/* firebase sets localStorage tokens to verify 

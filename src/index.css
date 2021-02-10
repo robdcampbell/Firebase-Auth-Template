@@ -1,3 +1,9 @@
 body {
-  background-color: #d4d1d1;
+  background: radial-gradient(ellipse at top, #f8f8f8, transparent),
+    radial-gradient(ellipse at bottom, #ff9789, transparent);
+  /* background: linear-gradient(#e66465, #9198e5); */
+}
+
+.modal__card {
+  background-color: rgba(255, 255, 255, 0.5);
 }
