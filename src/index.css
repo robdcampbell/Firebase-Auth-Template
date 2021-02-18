@@ -1,9 +1,16 @@
 body {
   /* background: radial-gradient(ellipse at top, #f8f8f8, transparent),
     radial-gradient(ellipse at bottom, #ff9789, transparent); */
-  /* background: linear-gradient(#e66465, #9198e5); */
-  background: radial-gradient(ellipse at top, #f8f8f8, transparent),
-    radial-gradient(ellipse at bottom, #a9d1d6, transparent);
+  background: rgb(250, 54, 54);
+  background: radial-gradient(
+    circle,
+    rgba(250, 54, 54, 1) 0%,
+    rgba(255, 188, 140, 1) 0%,
+    rgba(250, 54, 54, 1) 100%
+  );
+  /* background: radial-gradient(ellipse at top, #ad746d, transparent),
+    radial-gradient(ellipse at bottom, #436496, transparent);
+*/
 }
 
 .modal__card {
